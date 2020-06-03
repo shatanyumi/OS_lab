@@ -10,6 +10,7 @@
 sem_t chopstick[N];
 pthread_mutex_t mutex;
 int philosophers[N] = {0,1,2,3,4};
+pthread_t philo[N];
 
 void delay(){
 	int i = rand()%N;
@@ -47,7 +48,6 @@ void *eat_think(void *arg){
 }
 int main(){
 	srand(time(NULL));
-	pthread_t philo[N];
 	int i;	
 	
 	for(i = 0;i<N;i++){
